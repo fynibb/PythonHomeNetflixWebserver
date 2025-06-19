@@ -1,3 +1,19 @@
+That is the folder structure u
+Have to do so that works
+-----------------
+-
+--
+-
+-
+-
+-
+-
+-
+-
+
+
+
+
 static
   -style.css
 templates

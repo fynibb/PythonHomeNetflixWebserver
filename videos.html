@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Videos</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="videos-body">
+
+<h1>Home Streaming Server</h1>
+
+<ul class="video-list">
+    {% for video in videos %}
+    <li onclick="playVideo('{{ video }}')">
+        <a href="javascript:void(0)">{{ video[:-4] }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<div id="player" style="display:none;">
+    <video id="videoPlayer" controls>
+        <source id="videoSource" src="" type="video/mp4" />
+        Dein Browser unterstützt das Videoformat nicht.
+    </video>
+</div>
+
+<script>
+    function playVideo(filename) {
+        const playerDiv = document.getElementById('player');
+        const videoSource = document.getElementById('videoSource');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        videoSource.src = '/video/' + filename;
+        videoPlayer.load();
+        videoPlayer.play();
+        playerDiv.style.display = 'block';
+        window.scrollTo({ top: playerDiv.offsetTop, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

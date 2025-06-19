@@ -1,5 +1,6 @@
 That is the folder structure u
 Have to do so that works
+DONT forget to install Libarys and yes this is With ChatGPT so PASTED
 ----------------
 
 static
